@@ -1,0 +1,21 @@
+.book.modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close
+        %h4.text-center= t('.add_new_course')
+      = form_for [:admin, @book], remote: true,  html: {class: 'form-horizontal'} do |f|
+        .modal-body
+          .form-group
+            %label.control-label.col-sm-4=  'Name'
+            .col-sm-8
+              = f.text_field :book_name, class: 'form-control'
+          .form-group
+            %label.col-sm-4.control-label= 'Price'
+            .col-sm-8
+              = f.text_field :price, class: 'form-control'
+        .form-group.space-20
+          .modal-footer
+            .col-sm-12.pull-right
+              = f.submit 'save', data: { confirm: 'Are You Sure want to add New Book'}, 
+                class: 'btn btn-success'

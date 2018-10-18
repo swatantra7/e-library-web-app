@@ -1,0 +1,6 @@
+<% if @book.errors.blank? %>
+  $('.book').modal('hide');
+  $('table tbody').append('<%= j render "book_row", book: @book %>');
+<% else %>
+  
+<% end %>
