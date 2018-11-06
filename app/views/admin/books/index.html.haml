@@ -1,23 +1,23 @@
 %h4.text.center= 'Book List'
 .container
   .row 
-    = link_to t('.add_new_course'), new_admin_book_path, remote: true, class: ' btn btn-success pull-right'
+    = link_to 'Add New Book', new_admin_book_path, remote: true, class: ' btn btn-success pull-right'
   .col-md-12
     .table-wrapper
       .table-responsive
         %table.table.table-bordered.table-stripped
           %thead
             %tr
-              %th= '#'
+              %th= 'Reference'
               %th= 'BookName'
               %th= 'Subject Name'
               %th= 'Action'
           %tbody
             - @books.each.with_index(1) do |book, index|
               %tr
-                %td= index
+                %td= book.id
                 %td= book.book_name
                 %td= book.subject_name
                 %td 
-                  = link_to 'Edit', admin_book_edit_path(book), class: 'btn btn-default btn-success'
+                  = link_to 'Edit', edit_admin_book_path(book), remote: true, class: 'btn btn-default btn-success'
                   = link_to 'Delete', admin_book_path(book), method: :delete, class: 'btn btn-default btn-success'

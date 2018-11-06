@@ -3,7 +3,7 @@
     .modal-content
       .modal-header
         %button.close
-        %h4.text-center= t('.add_new_course')
+        %h4.text-center= 'Add New Book'
       = form_for [:admin, @book], remote: true,  html: {class: 'form-horizontal'} do |f|
         .modal-body
           .form-group
@@ -11,9 +11,22 @@
             .col-sm-8
               = f.text_field :book_name, class: 'form-control'
           .form-group
+            %label.control-label.col-sm-4=  'Subject'
+            .col-sm-8
+              = f.collection_select :subject_id, Subject.all, :id, :name, {hide_label: true}, class: 'form-control'
+          .form-group
+            %label.control-label.col-sm-4=  'Category'
+            .col-sm-8
+              = f.collection_select :category_ids, Category.all, :id, :name, {hide_label: true},multiple: true, class: 'form-control'
+          .form-group
             %label.col-sm-4.control-label= 'Price'
             .col-sm-8
               = f.text_field :price, class: 'form-control'
+          .form-group
+            %label.col-sm-4.control-label= 'Images'
+            .col-md-6.required
+              = f.file_field :images, label: 'Image'
+
         .form-group.space-20
           .modal-footer
             .col-sm-12.pull-right

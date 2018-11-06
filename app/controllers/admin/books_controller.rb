@@ -28,11 +28,10 @@ class Admin::BooksController < ApplicationController
   end
 
   def update
-    if @book.update_attribute(book_params)
-      redirect_to books_path
-      flash[:notice] = 'Book Updated Successfully'
+    if @book.update_attributes(book_params)
+      redirect_to admin_books_path
     else
-     redirect_to books_path
+      render 'edit'
       flash[:alert] = 'Book Not Updated'
     end
   end
@@ -49,7 +48,9 @@ class Admin::BooksController < ApplicationController
       :price,
       :payable,
       :status,
-      :subject_id
+      :subject_id,
+      :images,
+      category_ids: [],
     )
   end
 
