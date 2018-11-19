@@ -18,13 +18,9 @@
             = ''
           .col-mm-5
             = ''
-          .col-sm-5.pull-right
-            - if user_signed_in?
-              = link_to 'LogOut', destroy_user_session_path, method: :delete,
-                data: { confirm: 'Are you sure you want to logout?' }, class: 'icon btn'
-            - else
-              = link_to 'Login', new_user_session_path, class: 'icon btn btn-success'
-      %nav.navbar-navbar-default.custom-nav 
+          .col-sm-5
+            = ''
+      %nav.navbar-navbar-default.custom-nav
         .container-fluid
           .navbar-header
             %button.navbar-toggle data-toggle="collapse" data-target="#myNavbar" type = 'button'
@@ -33,10 +29,9 @@
             %span.icon-bar
             #myNavbar.collapse.navbar-collapse
             - if user_signed_in?
-              = render 'layouts/admin_user_navigation'
+              = render 'layouts/user_navigation'
             - else
               = render 'layouts/navigation'
-      #content
-        = yield
+    = yield
 
     

@@ -7,12 +7,16 @@ Rails.application.routes.draw do
       root 'admin/books#index', as: :authenticated_root
     end
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root 'public/home#index', as: :unauthenticated_root
     end
   end
 
   namespace :admin do
     resources :books
+  end
+
+  namespace :public do
+    resources :home, only: :index
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

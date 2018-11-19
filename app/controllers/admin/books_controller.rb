@@ -1,6 +1,6 @@
-class Admin::BooksController < ApplicationController
+class Admin::BooksController < AdminController
 
-  before_action :find_book, only: [:show, :edit, :update]
+  before_action :find_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = Book.all.order(updated_at: :desc)
@@ -33,6 +33,15 @@ class Admin::BooksController < ApplicationController
     else
       render 'edit'
       flash[:alert] = 'Book Not Updated'
+    end
+  end
+
+  def destroy
+    if @book.destroy
+      redirect_to admin_books_path
+    else
+      flash[:alert] = 'Cannot be deleted'
+      redirect_to admin_books_path
     end
   end
 
