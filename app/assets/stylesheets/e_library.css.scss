@@ -2,53 +2,220 @@
   background-color: #333;
   padding: 20px;
 }
-body {
-  background-color: #e2dcc5;
-}
-
-header#header-bar {
-  margin: 20px auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-header#header-bar {
-  margin: 20px auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-header#header-bar {
-  margin: 20px auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-header#header-bar {
-  max-width: 960px;
-  min-width: 300px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-body {
+body
+{
   font-size: 100%;
-  line-height: normal;
-  color: #333;
-  font-family: "Lucida Grande",Verdana,Geneva,Helvetica,Arial,sans-serif;
+  width: 100%;
+font-family: 'Roboto', sans-serif;
 }
+.top-div{
+  margin: 0;
+  padding:0;
+}
+.main-body{
+  margin: 0 auto;
+  max-width: 900px;
+  display: block;
+  margin-top: 50px;
+  border: 1px solid black;
+}
+.body-inner-content{
+text-decoration: none;
+text-align: center;
+padding:10px;
+color: white;
+background-color: #036dab;
+}
+.page-header{
+  width: 100%;
+  height: 35px;
+  background-color: black;
+  color: white;
+}
+.learn-more{
+  outline: none;
+  color: white;
+  width: 35px;
+  height: 25px;
+  border-radius: 3px;
+  border:none;
+  background-color: #3b98fc;
+  padding:5px;
+  font-family: 'Roboto',sans-serif;
+  cursor: pointer;
+}
+.learn-more:hover{
+background-color: none;
+text-decoration: none;
+color: none;
+cursor: pointer;
+}
+.browse-subject{
+  text-decoration: underline;
+  color: #036dab;
+  font-family: 'Roboto',sans-serif;
+  font-size: 1.2em;
+  
+cursor: pointer;
+}
+.all-margin{
+  padding:30px 15px 0px 15px;
+}
+.carousal-container{
+  padding: 5px;
+}
+.cards{
+display: flex;
+}
+.block-subject{
+  width: 100px;
+  height: 100px;
+  font-family: 'Roboto',sans-serif;
+  background-color: white;
+}
+.castle{
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-slide {
+  text-align: center;
+  color: #419be0;
+  background: white;
+}
+.religion{
+  font-family: 'Roboto',sans-serif;
+    font-size: 15px;
+    color: #333;
+    padding-top: 5px !important;
+    margin: 0px;
+    padding: 0px;
+}
+.religion-subtext{
+  text-align: center;
+    font-size: .7em;
+    line-height: 1;
+    color: #666;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    font-style: italic;
+}
+.slick-prev:before, .slick-next:before{
+  color: red !important;
+
+}
+.joseph{
+      height: 150px;
+    box-shadow: 1px 2px 5px 0 #c3b683;
+}
+.read-more{
+  height: 25px;
+    display: block;
+    width: 95px;
+    margin-top: 10px;
+    border-radius: 3px;
+    font-family: 'Roboto',sans-serif;
+    text-align: center;
+    font-size: 15px;
+    background-color: #3b98fc;
+    border: none;
+    color: white;
+    padding: 2px;
+}
+.read-more:hover{
+text-decoration: none;
+background-color: none;
+color: white;
+cursor: pointer;
+}
+.img-cover{
+  text-align: center;
+  padding: 0;
+  margin:0;
+}
+.single-item{
+margin: 15px;
+}.Classic-Books{
+  margin-top: 30px;
+}
+.inline{
+  display: inline;
+}
+.number{
+      font-family: "Georgia","Times New Roman",serif;
+    font-size: 1.125em;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.col-width{
+  width: 20%;
+  text-align: center;
+}
+.c-text{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5em;
+   text-align: justify;
+    font-family: "Georgia","Times New Roman",serif;
+    color: #333;
+    font-weight: normal;
+}
+.s-text{
+      flex: 2;
+    min-width: 300px;
+    max-width: 439px;
+    margin-top: 30px;
+    min-height: 100px;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 10px;    padding: 10px 0px;
+    font-family: "Georgia","Times New Roman",serif;
+}
+.underline{
+  text-decoration: underline;
+      font-family: "Lucida Grande",Verdana,Geneva,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+}
+.underline-small{
+font-family: "Lucida Grande",Verdana,Geneva,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+h2{
+      font-family: "Lucida Grande",Verdana,Geneva,Helvetica,Arial,sans-serif;
+    color: #666;
+    font-weight: 600;
+}
+.about{
+  margin-bottom: 30px;
+}
+.lable{
+    
+    margin-top: -20px;
+    padding: 0;
+    vertical-align: top;
+}
+.stats{
+    width: 100px;height: 60px;
+}
+.footer{
+  margin-top: 30px;
+      max-width: 900px;
+}
+ul{
+  list-style-type: none;
+}
+.title{
+  color: #333;
+  font-size: 15px;
+  margin: 0;
+  font-family: "Lucida Grande",Verdana,Geneva,Helvetica,Arial,sans-serif;
+  color: #666;
+  font-weight: 600;}
+  .title-text{
+    color: #036;
+    text-decoration: underline;
+  }

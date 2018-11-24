@@ -27,11 +27,78 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-            #myNavbar.collapse.navbar-collapse
-            - if user_signed_in?
-              = render 'layouts/user_navigation'
-            - else
-              = render 'layouts/navigation'
-    = yield
+          .row
+            .col-sm-7
+              #myNavbar.collapse.navbar-collapse
+              - if user_signed_in?
+                = render 'layouts/user_navigation'
+              - else
+                = render 'layouts/navigation'
+            .col-sm-5
+              %form.form-inline
+                %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+                %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+    .container
+      = yield
+    %footer.footer
+      .row
+        .col-sm-3
+          %ul
+            %li
+              %p Open Library
+            %li
+              %a{:href => "#"} Vision
+            %li
+              %a{:href => "#"} Career
+            %li
+              %a{:href => "#"} Blog
+            %li
+              %a{:href => "#"} Term of Services
+            %li
+              %a{:href => "#"} Donate
+        .col-sm-3
+          %ul
+            %li
+              %p Discover
+            %li
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "#"} Books
+            %li
+              %a{:href => "#"} Authers
+            %li
+              %a{:href => "#"} Subjects
+            %li
+              %a{:href => "#"} Adavance search
+            %li
+              %a{:href => "#"} Retun to Top
+        .col-sm-3
+          %ul
+            %li
+              %p Develop
+            %li
+              %a{:href => "#"} Development Center
+            %li
+              %a{:href => "#"} API Documentation
+            %li
+              %a{:href => "#"} Bulk data Dumps
+            %li
+              %a{:href => "#"} Writing a Bots
+            %li
+              %a{:href => "#"} Add a Book
+        .col-sm-3
+          %ul
+            %li
+              %p.title Help
+            %li
+              %a.title-text{:href => "#"} Help Center
+            %li
+              %a{:href => "#"} Contact and Support
+            %li
+              %a{:href => "#"} Suggesting Edits
+            /
+              <li><a href="#">Term of Services</a></li>
+              <li><a href="#">Donate</a></li>
+
 
     
