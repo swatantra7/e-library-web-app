@@ -1,7 +1,7 @@
 .container
   .main-body
     .body-inner-content
-      %strong> New Features: You can now embed Open Library books on your website!
+      %strong> New Features: You can now embed E-Library books on your website!
       %a.learn-more{:role => "button"} Learn More
     .all-margin
       .browse-subject
@@ -10,55 +10,68 @@
       .carousal-container
         .single-item
           .block-subject
-            %img.img-responsive.castle{:src => "castle.png"}/
-            %p.religion Religion
-            %p.religion-subtext 41,339 books
+            - @subjects.each do |subject|
+              %img.img-responsive.castle{:src =>'assets/default_image.png'}/
+              %p.religion 
+                = subject.name
+              %p.religion-subtext 
+                = subject.books.count
       .Classic-Books
         .browse-subject
           %a Classic Books
         .carousal-container
-          .single-item
-            .img-cover
-              %img.img-responsive.joseph{:src => "joseph.jpg"}/
-              %a.read-more{:role => "button"} Read More
+          - @books.each do |book|
+            .single-item
+              .img-cover
+                %img.img-responsive.joseph
+                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                %a.read-more{:role => "button"} Read More
       .Classic-Books
         .browse-subject
           %a Romance
         .carousal-container
-          .single-item
-            .img-cover
-              %img.img-responsive.joseph{:src => "joseph.jpg"}/
-              %a.read-more{:role => "button"} Borrow
+          - @books.each do |book|
+            .single-item
+              .img-cover
+                %img.img-responsive.joseph
+                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                %a.read-more{:role => "button"} Read More
       .Classic-Books
         .browse-subject
           %a Textbooks
         .carousal-container
-          .single-item
-            .img-cover
-              %img.img-responsive.joseph{:src => "joseph.jpg"}/
-              %a.read-more{:role => "button"} Borrow
+          - @books.each do |book|
+            .single-item
+              .img-cover
+                %img.img-responsive.joseph
+                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                %a.read-more{:role => "button"} Read More
       .Classic-Books
         .browse-subject
           %a Thrillers
         .carousal-container
-          .single-item
-            .img-cover
-              %img.img-responsive.joseph{:src => "joseph.jpg"}/
-              %a.read-more{:role => "button"} Borrow
+          - @books.each do |book|
+            .single-item
+              .img-cover
+                %img.img-responsive.joseph
+                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                %a.read-more{:role => "button"} Read More
       .Classic-Books
         .browse-subject
           %a Authors Alliance  MIT Press
         .carousal-container
-          .single-item
-            .img-cover
-              %img.img-responsive.joseph{:src => "joseph.jpg"}
-                %a.read-more{:role => "button"} Borrow
+          - @books.each do |book|
+            .single-item
+              .img-cover
+                %img.img-responsive.joseph
+                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                %a.read-more{:role => "button"} Read More
       .Classic-Books
         %h2.about About the project
         .row
           .col-sm-6
             %p.c-text
-              Open Library is an open, editable library catalog, building towards a web page for every book ever published.
+              E-Library is an open, editable library catalog, building towards a web page for every book ever published.
               = succeed "." do
                 %a{:href => "#"} More
             %p.s-text
@@ -84,11 +97,3 @@
               %a.underline.underline-small{:href => "#"} Search Full-Text within 4M+ Books
               \- July 14, 2018
             %a{:href => ""}
-
-
-
-
-
-
-
-

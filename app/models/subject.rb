@@ -1,5 +1,5 @@
 class Subject < ApplicationRecord
 
-  has_many :book
+  has_many :books
 
 end
