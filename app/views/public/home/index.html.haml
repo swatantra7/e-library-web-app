@@ -7,65 +7,77 @@
       .browse-subject
         %a Browse by Subject
         %hr/
-      .carousal-container
-        .single-item
-          .block-subject
-            - @subjects.each do |subject|
-              %img.img-responsive.castle{:src =>'assets/default_image.png'}/
-              %p.religion 
-                = subject.name
-              %p.religion-subtext 
-                = subject.books.count
-      .Classic-Books
-        .browse-subject
-          %a Classic Books
+      .col-md-12
         .carousal-container
-          - @books.each do |book|
-            .single-item
-              .img-cover
-                %img.img-responsive.joseph
-                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                %a.read-more{:role => "button"} Read More
-      .Classic-Books
-        .browse-subject
-          %a Romance
-        .carousal-container
-          - @books.each do |book|
-            .single-item
-              .img-cover
-                %img.img-responsive.joseph
-                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                %a.read-more{:role => "button"} Read More
-      .Classic-Books
-        .browse-subject
-          %a Textbooks
-        .carousal-container
-          - @books.each do |book|
-            .single-item
-              .img-cover
-                %img.img-responsive.joseph
-                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                %a.read-more{:role => "button"} Read More
-      .Classic-Books
-        .browse-subject
-          %a Thrillers
-        .carousal-container
-          - @books.each do |book|
-            .single-item
-              .img-cover
-                %img.img-responsive.joseph
-                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                %a.read-more{:role => "button"} Read More
-      .Classic-Books
-        .browse-subject
-          %a Authors Alliance  MIT Press
-        .carousal-container
-          - @books.each do |book|
-            .single-item
-              .img-cover
-                %img.img-responsive.joseph
-                  = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                %a.read-more{:role => "button"} Read More
+          .single-item
+            .block-subject
+              - @subjects.each do |subject|
+                .col-sm-4
+                  %img.img-responsive.castle{:src =>'assets/default_image.png'}/
+                  %p.religion 
+                    = subject.name
+                  %p.religion-subtext 
+                    = subject.books.count
+      .col-md-12
+        .Classic-Books
+          .browse-subject
+            %a Classic Books
+          .carousal-container
+            - @books.each do |book|
+              .col-sm-4
+                .single-item
+                  .img-cover
+                    %img.img-responsive.joseph
+                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                    %a.read-more{:role => "button"} Read More
+      .col-md-12
+        .Classic-Books
+          .browse-subject
+            %a Romance
+          .carousal-container
+            - @books.each do |book|
+              .col-sm-4
+                .single-item
+                  .img-cover
+                    %img.img-responsive.joseph
+                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                    %a.read-more{:role => "button"} Read More
+      .col-md-12
+        .Classic-Books
+          .browse-subject
+            %a Textbooks
+          .carousal-container
+            - @books.each do |book|
+              .col-sm-4
+                .single-item
+                  .img-cover
+                    %img.img-responsive.joseph
+                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                    %a.read-more{:role => "button"} Read More
+      .col-md-12
+        .Classic-Books
+          .browse-subject
+            %a Thrillers
+          .carousal-container
+            - @books.each do |book|
+              .col-sm-4
+                .single-item
+                  .img-cover
+                    %img.img-responsive.joseph
+                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                    %a.read-more{:role => "button"} Read More
+      .col-md-12
+        .Classic-Books
+          .browse-subject
+            %a Authors Alliance  MIT Press
+          .carousal-container
+            - @books.each do |book|
+              .col-sm-4
+                .single-item
+                  .img-cover
+                    %img.img-responsive.joseph
+                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                    %a.read-more{:role => "button"} Read More
       .Classic-Books
         %h2.about About the project
         .row

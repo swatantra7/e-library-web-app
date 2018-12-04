@@ -16,3 +16,14 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+
+$(document).ready(function(){
+  $.ajax({
+    type: 'get',
+    url: '/admin/books',
+    dataType: 'json',
+    success: function(data){
+    }
+  });
+});
+

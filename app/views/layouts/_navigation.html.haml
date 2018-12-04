@@ -1,7 +1,4 @@
-%ul.nav.navbar-nav
-  %li.list
-    = link_to 'Browse', '#', id: 'a-custom'
-  %li.list
-    = link_to 'My Books', '#', id: 'a-custom'
-  %li.list
-    = link_to 'More', '#', id: 'a-custom'
+.navigation-component
+  %ul.nav.navbar-nav
+    %li.list
+      = link_to 'Browse Books', public_home_index_path, id: 'a-custom'
