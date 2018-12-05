@@ -13,11 +13,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :books
+    resources :subjects
   end
 
   namespace :public do
     resources :home, only: :index
-    resources :books, only: :show
+    resources :books, only: :show do
+      member do
+        get :read
+      end
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,6 @@
+<% if @subject.errors.blank? %>
+  $('.subject').modal('hide');
+  $('table tbody').append('<%= j render "subject_row", subject: @subject %>');
+<% else %>
+  
+<% end %>

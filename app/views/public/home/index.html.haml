@@ -7,17 +7,16 @@
       .browse-subject
         %a Browse by Subject
         %hr/
-      .col-md-12
-        .carousal-container
-          .single-item
-            .block-subject
-              - @subjects.each do |subject|
-                .col-sm-4
-                  %img.img-responsive.castle{:src =>'assets/default_image.png'}/
-                  %p.religion 
-                    = subject.name
-                  %p.religion-subtext 
-                    = subject.books.count
+        .single-item
+          .col-md-12
+            - @subjects.each do |subject|
+              .col-sm-4
+                %img.img-responsive.joseph
+                  = link_to(image_tag(url_for(subject.images)), '#', class: 'image-list')
+                %p.religion
+                  = subject.name
+                %p.religion-subtext
+                  = subject.books.count
       .col-md-12
         .Classic-Books
           .browse-subject
@@ -29,7 +28,9 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                    %a.read-more{:role => "button"} Read More
+                      = link_to 'Read More', public_book_path(book), 
+                        role: 'button', class: 'read-more'
+
       .col-md-12
         .Classic-Books
           .browse-subject
@@ -41,7 +42,8 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                    %a.read-more{:role => "button"} Read More
+                    = link_to 'Read More', public_book_path(book), 
+                      role: 'button', class: 'read-more'
       .col-md-12
         .Classic-Books
           .browse-subject
@@ -53,7 +55,8 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                    %a.read-more{:role => "button"} Read More
+                    = link_to 'Read More', public_book_path(book), 
+                      role: 'button', class: 'read-more'
       .col-md-12
         .Classic-Books
           .browse-subject
@@ -65,7 +68,8 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                    %a.read-more{:role => "button"} Read More
+                    = link_to 'Read More', public_book_path(book), 
+                      role: 'button', class: 'read-more'
       .col-md-12
         .Classic-Books
           .browse-subject
@@ -77,7 +81,8 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
-                    %a.read-more{:role => "button"} Read More
+                    = link_to 'Read More', public_book_path(book), 
+                      role: 'button', class: 'read-more'
       .Classic-Books
         %h2.about About the project
         .row

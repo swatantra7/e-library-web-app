@@ -1,0 +1,20 @@
+%h4.text.center= 'Subject List'
+.container
+  .row 
+    = link_to 'Add New Subject', new_admin_subject_path, remote: true, class: ' btn btn-success pull-right'
+  .col-md-12
+    .table-wrapper
+      .table-responsive
+        %table.table.table-bordered.table-stripped
+          %thead
+            %tr
+              %th= 'Reference'
+              %th= 'SubjectName'
+              %th= 'Action'
+          %tbody
+            - @subjects.each.with_index(1) do |subject, index|
+              %tr
+                %td= subject.id
+                %td= subject.name
+                %td 
+                  = link_to 'Edit', edit_admin_subject_path(subject), remote: true, class: 'btn btn-default btn-success'
