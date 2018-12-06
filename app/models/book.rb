@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
 
   has_one_attached :images
+  has_one_attached :record_attachment
 
   belongs_to :subject
 

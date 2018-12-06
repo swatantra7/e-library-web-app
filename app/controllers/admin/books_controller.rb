@@ -59,8 +59,14 @@ class Admin::BooksController < AdminController
       :status,
       :subject_id,
       :images,
+      :record_attachment,
+      :description,
       category_ids: [],
     )
+  end
+
+  def attachment_params
+    params.require(:book).permit(:record_attachment)
   end
 
 end
