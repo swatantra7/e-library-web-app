@@ -12,7 +12,7 @@
             - @subjects.each do |subject|
               .col-sm-4
                 %img.img-responsive.joseph
-                  = link_to(image_tag(url_for(subject.images)), '#', class: 'image-list')
+                  = link_to(image_tag(url_for(subject.images), class: 'image-list'), '#', class: 'image-list')
                 %p.religion
                   = subject.name
                 %p.religion-subtext
@@ -27,7 +27,7 @@
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
-                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                      = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book))
                       = link_to 'Read More', public_book_path(book), 
                         role: 'button', class: 'read-more'
 
@@ -41,7 +41,7 @@
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
-                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                      = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .col-md-12
@@ -54,7 +54,7 @@
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
-                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                      = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .col-md-12
@@ -67,7 +67,7 @@
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
-                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                      = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .col-md-12
@@ -80,7 +80,7 @@
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
-                      = link_to(image_tag(url_for(book.images)), public_book_path(book), class: 'image-list')
+                      = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .Classic-Books

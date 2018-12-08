@@ -54,7 +54,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print'
-  gem 'sqlite3'
+  gem 'pg', '0.18.4'
 end
 
 group :test do

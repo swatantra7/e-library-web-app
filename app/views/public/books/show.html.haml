@@ -2,15 +2,18 @@
   .main-body
     .body-inner-content
       %strong> New Features: You can now embed E-Library books on your website!
+    .space-20
     .row
       .col-md-12
-        .col-md-4  
+        .col-md-6 
           .img-cover
             %img.img-responsive.joseph
-              = link_to(image_tag(url_for(@book.images)), public_book_path(@book), class: 'image-list')
-        .col-md-8
-          = @book.book_name
+              = link_to(image_tag(url_for(@book.images), class: 'image-list'), public_book_path(@book), class: 'image-list')     
+        .col-md-6
+          = @book.description
+    .space-20
     .row
       %center
         .col-md-4
           = link_to 'Read Book', "#{url_for(@book.record_attachment)}", target: "_blank", class: 'btn btn-success'
+    .space-20
