@@ -28,22 +28,22 @@
             %span.icon-bar
             %span.icon-bar
           .row
-            .col-sm-7
-              #myNavbar.collapse.navbar-collapse
-              - if user_signed_in?
-                = render 'layouts/admin_user_navigation'
-              - else
-                = render 'layouts/navigation'
-            .col-sm-3
-              %form.form-inline
-                %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-                %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
-            .col-sm-2
-              - if user_signed_in?
-                = link_to 'logout', destroy_user_session_path, method: :delete,
-                data: { confirm: 'Are you sure you want to logout?' }, class: 'icon btn'
-              - else
-                = link_to 'Login', new_user_session_path, class: 'icon btn'
+            #myNavbar.collapse.navbar-collapse
+              .col-sm-7
+                - if user_signed_in?
+                  = render 'layouts/admin_user_navigation'
+                - else
+                  = render 'layouts/navigation'
+              .col-sm-3
+                %form.form-inline
+                  %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+                  %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+              .col-sm-2
+                - if user_signed_in?
+                  = link_to 'logout', destroy_user_session_path, method: :delete,
+                  data: { confirm: 'Are you sure you want to logout?' }, class: 'icon btn'
+                - else
+                  = link_to 'Login', new_user_session_path, class: 'icon btn'
     .container
       = yield
     %footer.footer
