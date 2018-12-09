@@ -28,8 +28,9 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book))
-                      = link_to 'Read More', public_book_path(book), 
-                        role: 'button', class: 'read-more'
+                  %center.row
+                    = link_to 'Read More', public_book_path(book), 
+                      role: 'button', class: 'read-more'
 
       .col-md-12
         .Classic-Books
@@ -42,6 +43,7 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
+                  %center.row
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .col-md-12
@@ -55,6 +57,7 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
+                  %center.row
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .col-md-12
@@ -68,6 +71,7 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
+                  %center.row
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .col-md-12
@@ -81,6 +85,7 @@
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
+                  %center.row
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .Classic-Books
