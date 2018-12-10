@@ -1,0 +1,21 @@
+.main-body
+  .body-inner-content
+    %strong>  Books Of Subject #{@subject.name}
+    &nbsp;
+    %a.learn-more{:role => "button"} Learn More
+  .all-margin
+    .browse-subject
+      %a Books
+      .row
+        .col-md-12
+          .scroller
+            - @books.each do |book|
+              .col-sm-4
+                .row
+                  .single-item
+                    .img-cover
+                      %img.img-responsive.joseph
+                        = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book))
+                      .row.pull-left{style: "padding-left:20px;"}
+                        = link_to 'Read More', public_book_path(book), 
+                          role: 'button', class: 'read-more'

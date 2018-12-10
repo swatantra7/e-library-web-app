@@ -1,3 +1,5 @@
+- content_for :head do
+  %meta{content: "no-cache", name: "turbolinks-cache-control"}
 .container
   .main-body
     .body-inner-content
@@ -7,12 +9,12 @@
       .browse-subject
         %a Browse by Subject
         %hr/
-        .single-item
-          .col-md-12
-            - @subjects.each do |subject|
+        .col-md-12
+          - @subjects.each do |subject|
+            .scroller
               .col-sm-4
                 %img.img-responsive.joseph
-                  = link_to(image_tag(url_for(subject.images), class: 'image-list'), '#', class: 'image-list')
+                  = link_to(image_tag(url_for(subject.images), class: 'image-list'), books_public_subject_path(subject), class: 'image-list')
                 %p.religion
                   = subject.name
                 %p.religion-subtext
@@ -21,71 +23,71 @@
         .Classic-Books
           .browse-subject
             %a Classic Books
-          .carousal-container
+          .scroller
             - @books.each do |book|
               .col-sm-4
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book))
-                  %center.row
-                    = link_to 'Read More', public_book_path(book), 
-                      role: 'button', class: 'read-more'
+                    %centre
+                      = link_to 'Read More', public_book_path(book), 
+                        role: 'button', class: 'read-more'
 
       .col-md-12
         .Classic-Books
           .browse-subject
             %a Romance
-          .carousal-container
+          .scroller
             - @books.each do |book|
               .col-sm-4
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
-                  %center.row
-                    = link_to 'Read More', public_book_path(book), 
-                      role: 'button', class: 'read-more'
+                    %centre
+                      = link_to 'Read More', public_book_path(book), 
+                        role: 'button', class: 'read-more'
       .col-md-12
         .Classic-Books
           .browse-subject
             %a Textbooks
-          .carousal-container
+          .scroller
             - @books.each do |book|
               .col-sm-4
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
-                  %center.row
+                  %centre
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .col-md-12
         .Classic-Books
           .browse-subject
             %a Thrillers
-          .carousal-container
+          .scroller
             - @books.each do |book|
               .col-sm-4
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
-                  %center.row
-                    = link_to 'Read More', public_book_path(book), 
-                      role: 'button', class: 'read-more'
+                    %centre
+                      = link_to 'Read More', public_book_path(book), 
+                        role: 'button', class: 'read-more'
       .col-md-12
         .Classic-Books
           .browse-subject
             %a Authors Alliance  MIT Press
-          .carousal-container
+          .scroller
             - @books.each do |book|
               .col-sm-4
                 .single-item
                   .img-cover
                     %img.img-responsive.joseph
                       = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book), class: 'image-list')
-                  %center.row
+                  %centre
                     = link_to 'Read More', public_book_path(book), 
                       role: 'button', class: 'read-more'
       .Classic-Books

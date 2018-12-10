@@ -77,11 +77,7 @@ display: flex;
   margin-left: auto;
   margin-right: auto;
 }
-.slick-slide {
-  text-align: center;
-  color: #419be0;
-  background: white;
-}
+
 .religion{
   font-family: 'Roboto',sans-serif;
     font-size: 15px;
@@ -200,9 +196,11 @@ h2{
 .stats{
     width: 100px;height: 60px;
 }
+
 .footer{
   margin-top: 30px;
-      max-width: 900px;
+  max-width: none;   
+  margin: 30px 0px 0px 70px;
 }
 ul{
   list-style-type: none;
@@ -238,3 +236,17 @@ ul{
 .space-20 {
   padding: 20px 0;
 }
+
+.browse-books{
+  margin-left: 80px; 
+}
+
+.login{
+  color: white; 
+  padding-top: 12px; 
+  vertical-align: middle !important;   
+  margin-right: 55px;   
+  position: relative; 
+  float: right;
+}
+ 
