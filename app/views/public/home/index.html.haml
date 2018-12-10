@@ -12,13 +12,13 @@
         .col-md-12
           .scroller
             - @subjects.each do |subject|
-                .col-sm-4
-                  %img.img-responsive.joseph
-                    = link_to(image_tag(url_for(subject.images), class: 'image-list'), books_public_subject_path(subject), class: 'image-list')
-                  %p.religion
-                    = subject.name
-                  %p.religion-subtext
-                    = subject.books.count
+              .col-sm-4
+                %img.img-responsive.joseph
+                  = link_to(image_tag(url_for(subject.images), class: 'image-list'), books_public_subject_path(subject), class: 'image-list')
+                %p.religion
+                  = subject.name
+                %p.religion-subtext
+                  = subject.books.count
       .col-md-12
         .Classic-Books
           .browse-subject
