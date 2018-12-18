@@ -1,20 +1,19 @@
 default: &default
-  adapter: postgresql
-  host: localhost
-  username: postgres
-  password: root
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
 
 development:
   <<: *default
-  database: e_library_web_app
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: e_library_web_app
+  database: db/test.sqlite3
 
 production:
   <<: *default
-  database: e_library_web_app
+  database: db/production.sqlite3

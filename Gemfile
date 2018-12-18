@@ -12,6 +12,8 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
+gem 'sqlite3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
@@ -57,7 +59,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print'
-  gem 'pg', '0.18.4'
 end
 
 group :test do
@@ -69,7 +70,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.18.4'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
