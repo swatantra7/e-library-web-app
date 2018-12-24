@@ -1,0 +1,27 @@
+%h4
+  %center
+    = 'Students'
+.container
+  .row 
+    = link_to 'Add New Student', new_admin_student_path, class: ' btn btn-success pull-right'
+  .space-20
+  .col-md-12
+    .table-wrapper
+      .table-responsive
+        %table.table.table-bordered.table-stripped
+          %thead
+            %tr
+              %th= 'Reference'
+              %th= 'Student Name'
+              %th= 'Action'
+          %tbody
+            - @students.each.with_index(1) do |student, index|
+              %tr
+                %td= student.id
+                %td= student.name
+                %td 
+                  = link_to 'Edit', edit_admin_student_path(student), class: 'btn btn-default btn-success'
+                  &nbsp;
+                  = link_to 'Send Confirmation',
+                    student_confirmation_path(student: { email: student.email }),
+                    method: :post, class: 'btn btn-success'

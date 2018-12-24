@@ -1,0 +1,15 @@
+.space-20
+  = form_for [:admin, @student], html: {class: 'form-horizontal'} do |f|
+    .form-group
+      %label.control-label.col-sm-4=  'Email'
+      .col-sm-8
+        = f.text_field :email, class: 'form-group'
+    .form-group
+      %label.control-label.col-sm-4='Name'
+      .col-sm-8
+        = f.text_field :name, class: 'form-group'
+    .form-group
+      %center
+        = f.submit 'save',  data: { confirm: 'Are You Sure want to add New Student'}, 
+          class: 'btn btn-success'
+        = link_to 'cancel', new_admin_student_path, class: 'btn btn-success'  

@@ -1,0 +1,22 @@
+.col-md-12
+  %h2 Account Activation
+  = form_for resource, as: resource_name, url: update_student_confirmation_path,
+      html: {method: 'patch', class: 'form-horizontal'}, id: 'activation-form' do |f|
+    %fieldset
+      %legend
+        | Account Activation
+        - if resource.email
+          = " for #{resource.email}"
+    - if @requires_password
+      .form-group
+        = f.label :password,'Choose a Password:', class: 'col-md-2'
+        .col-md-4
+          = f.password_field :password, class: 'form-control'
+      .form-group
+        = f.label :password_confirmation,'Password Confirmation:', class: 'col-md-2'
+        .col-md-4
+          = f.password_field :password_confirmation, class: 'form-control'
+    = hidden_field_tag :confirmation_token, @confirmation_token
+    .form-group
+      .col-md-4.col-md-offset-2
+        = f.submit 'Activate', class: 'btn btn-default'
