@@ -11,9 +11,17 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :students, controllers: { confirmations: 'confirmations' }
+  devise_scope :student do
+    patch '/student/confirmation', to: 'confirmations#update', as: :update_student_confirmation
+    authenticated :student do
+      root 'students/dashboards#index'
+    end
+  end
   namespace :admin do
     resources :books
     resources :subjects
+    resources :students
   end
 
   namespace :public do

@@ -6,19 +6,17 @@
       %strong> New Features: You can now embed E-Library books on your website!
       %a.learn-more{:role => "button"} Learn More
     .all-margin
-      .browse-subject
-        %a Browse by Subject
-        %hr
-        .col-md-12
+      .col-md-12
+        .Classic-Books
+          .browse-subject
+            %a Browse By Subject
           .scroller
-            - @subjects.each do |subject|
+            - @subjects.each do |book|
               .col-sm-4
-                %img.img-responsive.joseph
-                  = link_to(image_tag(url_for(subject.images), class: 'image-list'), books_public_subject_path(subject), class: 'image-list')
-                %p.religion
-                  = subject.name
-                %p.religion-subtext
-                  = subject.books.count
+                .single-item
+                  .img-cover
+                    %img.img-responsive.joseph
+                      = link_to(image_tag(url_for(book.images), class: 'image-list'), public_book_path(book))
       .col-md-12
         .Classic-Books
           .browse-subject

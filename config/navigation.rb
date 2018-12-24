@@ -10,6 +10,10 @@ SimpleNavigation::Configuration.run do |navigation|
         subject.dom_class = 'nav nav-tabs'
         primary.dropdown = false
       end
+      secondary.item :students, 'STUDENTS', admin_students_path do |student|
+        student.dom_class = 'nav nav-tabs'
+        primary.dropdown = false
+      end
     end
     primary.dom_class = 'nav navbar-nav'
     primary.dropdown = true
