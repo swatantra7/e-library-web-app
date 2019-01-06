@@ -1,23 +1,32 @@
-%h4.text.center= 'Book List'
-.container
-  .row 
-    = link_to 'Add New Book', new_admin_book_path, remote: true, class: ' btn btn-success pull-right'
-  .col-md-12
-    .table-wrapper
-      .table-responsive
-        %table.table.table-bordered.table-stripped
-          %thead
-            %tr
-              %th= 'Reference'
-              %th= 'BookName'
-              %th= 'Subject Name'
-              %th= 'Action'
-          %tbody
-            - @books.each.with_index(1) do |book, index|
+.content-wrapper
+  %section.content.container-fluid
+    %section
+      .content-wrapper
+        .row.row-class
+          .col-sm-6
+            .access
+              %p Books List
+          .col-sm-6
+            .btn-add-new{:style => "float: right;"}
+              .space-10
+                = link_to 'Add New', new_admin_book_path, remote: :true, class: '.margin-15'
+        .table-content
+          %table.table.table-striped.table_t
+            %thead.head-th{:style => ""}
               %tr
-                %td= book.id
-                %td= book.book_name
-                %td= book.subject_name
-                %td 
-                  = link_to 'Edit', edit_admin_book_path(book), remote: true, class: 'btn btn-default btn-success'
-                  = link_to 'Delete', admin_book_path(book), method: :delete, class: 'btn btn-default btn-success'
+                %th.role.bor.Role-width{:scope => "col", :style => ""} Reference
+                %th.role.bor.role-blank-th{:scope => "col", :style => ""} BookName
+                %th.role.bor.role-blank-th-t{:scope => "col", :style => ""} Subject Name
+                %th.role.bor.role-blank-th-t{:scope => "col", :style => ""} Action
+            %tbody
+              - @books.each.with_index(1) do |book, index|
+                %tr
+                  %td.change.tr-radius-left
+                    = book.id
+                  %td.change.tr-radius-left
+                    = book.book_name
+                  %td.change.tr-radius-left
+                    = book.subject_name
+                  %td.change.tr-radius-left 
+                    = link_to 'Edit', edit_admin_book_path(book), remote: true
+                    = link_to 'Delete', admin_book_path(book), method: :delete

@@ -7,7 +7,11 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+    / Google Font
+    %link{:href => "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic", :rel => "stylesheet"}/
     - if content_for?(:head)
       = yield(:head)
   %body
@@ -34,79 +38,27 @@
               #myNavbar.collapse.navbar-collapse
               - if user_signed_in?
                 = render 'layouts/admin_user_navigation'
-              - else
+              - elsif student_signed_in?
                 = render 'layouts/navigation'
-            .col-sm-3
-              %form.form-inline
-                %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-                %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+              - else
+                = render 'layouts/public_navigation'
             .col-sm-2
               - if user_signed_in?
                 = link_to 'logout', destroy_user_session_path, method: :delete,
                 data: { confirm: 'Are you sure you want to logout?' }, class: 'icon btn'
-              - else
-                = link_to 'Login', new_user_session_path, class: 'icon btn'
+              - elsif !student_signed_in?
+                = link_to 'Admin Login', new_user_session_path, class: 'icon btn'
+            .col-sm-2
+              - if student_signed_in?
+                = link_to 'logout', destroy_student_session_path, method: :delete,
+                data: { confirm: 'Are you sure you want to logout?' }, class: 'icon btn'
+              - elsif !user_signed_in?
+                = link_to 'Student Login', new_student_session_path, class: 'icon btn'
     .container
       = yield
-    %footer.footer
-      .row
-        .col-sm-3
-          %ul
-            %li
-              %p Open Library
-            %li
-              %a{:href => "#"} Vision
-            %li
-              %a{:href => "#"} Career
-            %li
-              %a{:href => "#"} Blog
-            %li
-              %a{:href => "#"} Term of Services
-            %li
-              %a{:href => "#"} Donate
-        .col-sm-3
-          %ul
-            %li
-              %p Discover
-            %li
-              %a{:href => "#"} Home
-            %li
-              %a{:href => "#"} Books
-            %li
-              %a{:href => "#"} Authers
-            %li
-              %a{:href => "#"} Subjects
-            %li
-              %a{:href => "#"} Adavance search
-            %li
-              %a{:href => "#"} Retun to Top
-        .col-sm-3
-          %ul
-            %li
-              %p Develop
-            %li
-              %a{:href => "#"} Development Center
-            %li
-              %a{:href => "#"} API Documentation
-            %li
-              %a{:href => "#"} Bulk data Dumps
-            %li
-              %a{:href => "#"} Writing a Bots
-            %li
-              %a{:href => "#"} Add a Book
-        .col-sm-3
-          %ul
-            %li
-              %p.title Help
-            %li
-              %a.title-text{:href => "#"} Help Center
-            %li
-              %a{:href => "#"} Contact and Support
-            %li
-              %a{:href => "#"} Suggesting Edits
-            /
-              <li><a href="#">Term of Services</a></li>
-              <li><a href="#">Donate</a></li>
+
+:javascript
+  $('.sidebar-menu').tree();
 
 
     

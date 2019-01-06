@@ -30,7 +30,7 @@ class Admin::StudentsController < AdminController
   private
 
   def students_params
-    params.require(:student).permit(:email, :password, :name)
+    params.require(:student).permit(:email, :name)
   end
 
   def find_student

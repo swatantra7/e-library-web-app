@@ -1,1 +1,78 @@
-= render_navigation level: 1..2, expand_all: true, renderer: :bootstrap
+%body.skin-blue.sidebar-mini.fixed.sidebar-expanded-on-hover
+  .wrapper
+    / Main Header
+    / Main Header
+    %header.main-header
+      / Logo
+      %a.logo{:href => "#"}
+        / mini logo for sidebar mini 50x50 pixels
+        %span.logo-mini
+          %img{:src => "/dist/img/side-logo.png"}/
+        / logo for regular state and mobile devices
+        %span.logo-lg
+          %img.img-class{:src => "/dist/img/side-logo.png"}/
+      / Header Navbar
+      %nav.navbar.navbar-static-top{:role => "navigation"}
+        / Sidebar toggle button
+        %a.sidebar-toggle{"data-toggle" => "push-menu", href: '#', :role => "button"}
+          %span.sr-only Toggle navigation
+        .input-div
+          %input.search-input{:name => "search", :placeholder => "Search", :type => "text"}/
+          / <span class="search">Search</span>
+        / Navbar Right Menu
+        .navbar-custom-menu
+          %ul.nav.navbar-nav
+            / User Account Menu
+            %li
+              %a{:href => "#"}
+                %span
+                  %i.material-icons notifications
+                  %span.badge.badge-light
+            %li.dropdown.user.user-menu
+              / Menu Toggle Button
+              / The user image in the navbar
+              %a{:href => "#"}
+                %span.round V
+                %span.rohan 
+                  = current_user.email
+            %li
+              %i.material-icons.down-arrow{:style => "  "}
+                keyboard_arrow_down
+    / Left side column. contains the logo and sidebar
+    %aside.main-sidebar
+      / sidebar: style can be found in sidebar.less
+      %section.sidebar
+        / Sidebar Menu
+        %ul.sidebar-menu{"data-widget" => "tree"}
+          / Optionally, you can add icons to the links
+          %li.active
+            %a{"data-toggle" => "push-menu", href: '#'}
+              %img{:src => "/dist/img/side-logo.png"}/
+              %span.span-a.nav-pad Dashboard
+          %li.treeview
+            %a{:href => ""}
+              %img{:src => "/dist/img/projects.png"}/
+              %span.span-a.nav-pad Books
+              %span.pull-right-container
+                %i.fa.fa-angle-left.pull-right
+            %ul.treeview-menu
+              %li
+                = link_to 'All', admin_books_path 
+          %li.treeview
+            %a{:href => ""}
+              %img{:src => "/dist/img/properties.png"}/
+              %span.span-a.nav-pad Subjects
+              %span.pull-right-container
+                %i.fa.fa-angle-left.pull-right
+            %ul.treeview-menu
+              %li
+                = link_to 'All', admin_subjects_path
+          %li.treeview
+            %a{:href => ""}
+              %img{:src => "/dist/img/properties.png"}/
+              %span.span-a.nav-pad Students
+              %span.pull-right-container
+                %i.fa.fa-angle-left.pull-right
+            %ul.treeview-menu
+              %li
+                = link_to 'All', admin_students_path

@@ -1,0 +1,14 @@
+.col-md-12
+  .Classic-Books
+    .browse-subject
+      %a Classic Books
+    .scroller
+      - @books.each do |book|
+        .col-sm-4
+          .single-item
+            .img-cover
+              %img.img-responsive.joseph
+                = link_to(image_tag(url_for(book.images), class: 'image-list'), students_book_path(book))
+              %centre
+                = link_to 'Read More', students_book_path(book), 
+                  role: 'button', class: 'read-more'

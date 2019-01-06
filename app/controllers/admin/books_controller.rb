@@ -1,10 +1,8 @@
 class Admin::BooksController < AdminController
 
-  before_action :find_book, only: [:show, :edit, :update, :destroy]
+  include BookShared
 
-  def index
-    @books = Book.all.order(updated_at: :desc)
-  end
+  before_action :find_book, only: [:show, :edit, :update, :destroy]
 
   def new
     @book = Book.new
