@@ -2,6 +2,12 @@
   .wrapper
     / Main Header
     / Main Header
+    %aside.main-sidebar
+      %section.sidebar
+        .user-panel
+          .pull-left.info
+            %p
+              = current_user.email
     %header.main-header
       / Logo
       %a.logo{:href => "#"}
@@ -22,22 +28,17 @@
         / Navbar Right Menu
         .navbar-custom-menu
           %ul.nav.navbar-nav
-            / User Account Menu
-            %li
-              %a{:href => "#"}
-                %span
-                  %i.material-icons notifications
-                  %span.badge.badge-light
             %li.dropdown.user.user-menu
-              / Menu Toggle Button
-              / The user image in the navbar
-              %a{:href => "#"}
-                %span.round V
-                %span.rohan 
+              %a.dropdown.dropdown-toggle{"data-toggle" => "dropdown", :href => ""}
+                %span.round
+                  = current_user.email[0].capitalize
+                %span
                   = current_user.email
-            %li
-              %i.material-icons.down-arrow{:style => "  "}
-                keyboard_arrow_down
+                %span.caret
+              %ul.dropdown-menu
+                %li.user-footer
+                  %div{:style => "text-align:center;"}
+                    = link_to "SignOut", destroy_user_session_path, method: :delete, class: 'btn.btn-default.btn-flat'
     / Left side column. contains the logo and sidebar
     %aside.main-sidebar
       / sidebar: style can be found in sidebar.less
@@ -76,3 +77,5 @@
             %ul.treeview-menu
               %li
                 = link_to 'All', admin_students_path
+:javascript
+  $('.dropdown-toggle').dropdown();

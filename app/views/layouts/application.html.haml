@@ -16,46 +16,16 @@
       = yield(:head)
   %body
     %header
-      .container-fluid.custom-head
-        .col-md-2
-      .header-main
-        .container-fluid
-          .col-sm-2
-            = ''
-          .col-mm-5
-            = ''
-          .col-sm-5
-            = ''
-      %nav.navbar-navbar-default.custom-nav
-        .container-fluid
-          .navbar-header
-            %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", type: "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          .row
-            .col-sm-7
-              #myNavbar.collapse.navbar-collapse
-              - if user_signed_in?
-                = render 'layouts/admin_user_navigation'
-              - elsif student_signed_in?
-                = render 'layouts/navigation'
-              - else
-                = render 'layouts/public_navigation'
-            .col-sm-2
-              - if user_signed_in?
-                = link_to 'logout', destroy_user_session_path, method: :delete,
-                data: { confirm: 'Are you sure you want to logout?' }, class: 'icon btn'
-              - elsif !student_signed_in?
-                = link_to 'Admin Login', new_user_session_path, class: 'icon btn'
-            .col-sm-2
-              - if student_signed_in?
-                = link_to 'logout', destroy_student_session_path, method: :delete,
-                data: { confirm: 'Are you sure you want to logout?' }, class: 'icon btn'
-              - elsif !user_signed_in?
-                = link_to 'Student Login', new_student_session_path, class: 'icon btn'
-    .container
-      = yield
+      - unless user_signed_in? || student_signed_in?
+        .top-bar
+          .container
+            = render 'layouts/public_navigation'
+  - if user_signed_in?
+    = render 'layouts/admin_user_navigation'
+  - elsif student_signed_in?
+    = render 'layouts/navigation'
+  .container
+    = yield
 
 :javascript
   $('.sidebar-menu').tree();

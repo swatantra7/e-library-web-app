@@ -3,7 +3,7 @@
     / Main Header
     / Main Header
     %header.main-header
-      / Logo
+      / logo-mini
       %a.logo{:href => "#"}
         / mini logo for sidebar mini 50x50 pixels
         %span.logo-mini
@@ -23,12 +23,13 @@
         .navbar-custom-menu
           %ul.nav.navbar-nav
             / User Account Menu
-            %li
-              %a{:href => "#"}
+            %li.dropdown.user.user-menu
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                 %span
                   %i.material-icons notifications
                   %span.badge.badge-light
-            %li.dropdown.user.user-menu
+            %ul.dropdown-menu
+              %li.dropdown.user.user-menu
               / Menu Toggle Button
               / The user image in the navbar
               %a{:href => "#"}

@@ -2,3 +2,10 @@
   %ul.nav.navbar-nav
     %li.list
       = link_to 'Browse Books', public_home_index_path, class: 'browse-books'
+  .pull-right
+    %ul.nav.navbar-nav
+      %li
+        = link_to 'Student login', new_student_session_path, class: 'icon btn'
+    %ul.nav.navbar-nav
+      %li
+        = link_to 'Admin login', new_user_session_path, class: 'icon btn'

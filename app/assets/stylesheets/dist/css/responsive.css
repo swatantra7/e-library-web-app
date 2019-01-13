@@ -1,0 +1,79 @@
+@media only screen and (max-width: 600px) {
+    .sidebar-expanded-on-hover .main-footer,
+    .sidebar-expanded-on-hover .content-wrapper {
+        min-height: 640px !important;
+        margin: 0px !important;
+        width: 100%;
+        padding: 0% !important;
+        display: contents;
+    }
+    .skin-blue .main-header .logo {
+        width: 100%;
+        display: inline;
+    }
+    .skin-blue .main-header .navbar {
+        display: table-cell;
+        width: 100%;
+        float: right;
+    }
+    .search-input {
+        width: 100% !important;
+        margin: 0;
+        position: relative;
+    }
+    .table-content {
+        top: 100px !important;
+        scroll-behavior: auto;
+        width: 100%;
+        overflow: auto;
+        position: relative;
+    }
+    /* .map-img {
+        padding: 0px;
+        margin: 0px;
+        position: absolute;
+        float: right;
+    } */
+    .new {
+        margin-right: -15px !important;
+        padding-left: 0px !important;
+        position: relative;
+        display: inline;
+        top: 15px;
+    }
+    .btn-add-new {
+        position: relative;
+        right: -50px;
+    }
+    .access {
+        float: left !important;
+        margin: 0px;
+        padding: 0px !important;
+    }
+    .row-class {
+
+
+
+
+        display: -webkit-inline-box;
+        top: 17% !important;
+        padding: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        position: absolute;
+    }
+    .table {
+        margin-top: 50px !important;
+    }
+    .navbar-custom-menu .navbar-nav>li>a {
+        margin-right: 10px !important;
+    }
+    .rohan {
+        display: none;
+    }
+    .down-arrow {
+        padding: 0;
+        margin-right: 10px !important;
+        position: relative;
+    }
+}
