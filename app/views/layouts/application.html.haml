@@ -18,8 +18,8 @@
     %header
       - unless user_signed_in? || student_signed_in?
         .top-bar
-          .container
-            = render 'layouts/public_navigation'
+          .container-fluid.custom-head 
+        = render 'layouts/public_navigation'
   - if user_signed_in?
     = render 'layouts/admin_user_navigation'
   - elsif student_signed_in?

@@ -1,11 +1,17 @@
-.navigation-component
-  %ul.nav.navbar-nav
-    %li.list
-      = link_to 'Browse Books', public_home_index_path, class: 'browse-books'
-  .pull-right
-    %ul.nav.navbar-nav
-      %li
-        = link_to 'Student login', new_student_session_path, class: 'icon btn'
-    %ul.nav.navbar-nav
-      %li
-        = link_to 'Admin login', new_user_session_path, class: 'icon btn'
+.container
+  .navbar-header
+    %button.navbar-toggle{"data-toggle": "collapse", "data-target": "#myNavbar", type: 'button'}
+      %span.icon-bar.custom-color
+      %span.icon-bar.custom-color
+      %span.icon-bar.custom-color
+  .col-sm-6
+    #myNavbar.collapse.navbar-collapse  
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Browse Books', public_home_index_path, class: 'icon btn'
+        %li
+          = link_to 'Student login', new_student_session_path, class: 'icon btn'
+        %li
+          = link_to 'Admin login', new_user_session_path, class: 'icon btn'
+  .col-sm-6
+    = image_tag('logo.jpeg', size: '100*100', class: 'image-size')

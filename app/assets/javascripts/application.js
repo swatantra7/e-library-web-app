@@ -12,22 +12,15 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require activestorage
-//= require initialize
 //= require bootstrap-sprockets
 //= require bootstrap.min
+//= require activestorage
+//= require initialize
 //= require turbolinks
 //= require_tree .
 
 
 $(document).ready(function(){
-  $.ajax({
-    type: 'get',
-    url: '/admin/books',
-    dataType: 'json',
-    success: function(data){
-    }
-  });
 });
 
 

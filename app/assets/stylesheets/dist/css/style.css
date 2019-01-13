@@ -1721,3 +1721,11 @@ color: #757575;
                                                        width: 180px;
                                                        left: 50px;
                                                    }
+                                                   .image-size{
+                                                      height: 100px;
+                                                      width: 300px; 
+                                                   }
+                                                   .custom-color{
+                                                      background:rgba(0, 0, 0, 0.20);
+                                                   }
+
